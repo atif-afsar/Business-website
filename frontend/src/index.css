@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-sage: #e3ebd2;
+    --charcoal: #262523;
+    --gray-mid: #81817d;
+    --gray-light: #b3b2ae;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: #e3ebd2;
+    color: #262523;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: #262523;
+    color: #e3ebd2;
+  }
+}
+
+/* Custom architectural polygon clip paths */
+.clip-hero-notch {
+  clip-path: polygon(0 0, 57% 0, 69% 22%, 81% 0, 100% 0, 100% 100%, 27% 100%, 0 76%);
+}
+
+@media (max-width: 768px) {
+  .clip-hero-notch {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+/* Subtle grain or architectural grid lines */
+.border-subtle {
+  border-color: rgba(38, 37, 35, 0.18);
+}
+
+.border-subtle-dark {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Custom minimal scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e3ebd2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b3b2ae;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #81817d;
+}
