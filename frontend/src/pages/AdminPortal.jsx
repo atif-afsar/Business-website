@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, Plus, Edit2, Trash2, RefreshCw, LogOut, CheckCircle, ExternalLink, ShieldCheck, Database } from 'lucide-react';
-
-const API_BASE = 'http://localhost:5050/api';
+import { API_BASE } from '../config/api';
 
 export default function AdminPortal() {
   const [token, setToken] = useState(() => localStorage.getItem('mod7_admin_token') || '');
@@ -58,7 +57,7 @@ export default function AdminPortal() {
         setLoginError(data.message || 'Invalid credentials');
       }
     } catch (err) {
-      setLoginError('Cannot connect to backend server. Make sure port 5050 is running.');
+      setLoginError('Cannot connect to backend server. If using Render free tier, it may take 30-45s to wake up.');
     } finally {
       setIsLoggingIn(false);
     }

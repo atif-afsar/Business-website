@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { SERVICES_DATA } from '../data/websiteData';
+import { API_BASE } from '../config/api';
 
 export default function ServicesSection({ onOpenDiscuss }) {
   const [services, setServices] = useState(SERVICES_DATA);
@@ -10,7 +11,7 @@ export default function ServicesSection({ onOpenDiscuss }) {
   const fetchServices = async () => {
     try {
       setLoading(true);
-      const res = await fetch('http://localhost:5050/api/services');
+      const res = await fetch(`${API_BASE}/services`);
       if (res.ok) {
         const json = await res.json();
         if (json.success && Array.isArray(json.data) && json.data.length > 0) {
